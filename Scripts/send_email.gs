@@ -1,6 +1,6 @@
 function sendEmailFromSheetA() {
 
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("WT-List-x");
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Test");
   var data = sheet.getDataRange().getValues();
 
   var subject = "[CSE, NITK, Surathkal] M. Tech (SF) Admission-26: Guidelines";
@@ -30,7 +30,6 @@ function sendEmailFromSheetA() {
         "6. Written Test: 22.06.2026 (Monday), 09:30 AM - 10:30 AM.<br>" +
         "7. Syllabus: <a href='https://www.nitk.ac.in/document/attachments/9774/CSE-MTech_SS-26-Call_Letter-Website-11.06.26.pdf'>Click Here</a><br>" +
         "<b>8. Written Test Venue:</b> " + room + ".<br><br>" +
-        "<b>Note:</b> No mobile phones, calculators, or electronic gadgets are permitted inside the examination hall.<br><br>" +
 
         "<b>B. Programming Test Guidelines</b> (<span style='color:blue'>Only for the candidates <b>shortlisted after the Written Test.</b></span>):<br>" +
         "1. Computer-Based Test (CBT) - Offline.<br>" +
@@ -39,6 +38,8 @@ function sendEmailFromSheetA() {
         "4. Reporting Time: 22.06.2026 (Monday), 12:00 PM.<br>" +
         "5. Programming Test: 22.06.2026 (Monday), 12:30 PM - 01:30 PM.<br>" +
         "<b>6. Programming Test Venue:</b> CSE Dept. Lab No. 407 (Ground Floor).<br><br>" +
+
+        "<b>Note:</b> No mobile phones, calculators, or electronic gadgets are permitted inside the examination hall.<br><br>" +
 
         "<b>C. Document Verification Guidelines</b> (<span style='color:blue'>Only for the candidates <b>shortlisted after the Programming Test</b></span>):<br>" +
         "1. Reporting Time: 23.06.2026 (Tuesday), 08:30 AM.<br>" +
