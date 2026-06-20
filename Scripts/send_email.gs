@@ -1,6 +1,6 @@
 function sendEmailFromSheetA() {
 
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Test");
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("WT-List-x");
   var data = sheet.getDataRange().getValues();
 
   var subject = "[CSE, NITK, Surathkal] M. Tech (SF) Admission-26: Guidelines";
