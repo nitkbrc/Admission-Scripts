@@ -1,0 +1,41 @@
+=MAP(
+ UNIQUE(
+  FILTER(
+   ARRAYFORMULA(PROPER(Inst!A2:A))&"♦"&Inst!I2:I,
+   ISNUMBER(
+    MATCH(
+     Inst!I2:I,
+     FILTER(
+      Consent!B2:B,
+      REGEXMATCH(Consent!E2:E,"Yes, I will attend|Not sure yet")
+     ),
+     0
+    )
+   ),
+   Inst!I2:I<>""
+  )
+ ),
+ LAMBDA(x,
+ {
+  INDEX(SPLIT(x,"♦"),1),
+  TEXTJOIN(", ",TRUE,
+   FILTER(
+    Inst!B2:B,
+    (ARRAYFORMULA(PROPER(Inst!A2:A))=INDEX(SPLIT(x,"♦"),1))*
+    (Inst!I2:I=INDEX(SPLIT(x,"♦"),2))*
+    ISNUMBER(
+     MATCH(
+      Inst!I2:I,
+      FILTER(
+       Consent!B2:B,
+       REGEXMATCH(Consent!E2:E,"Yes, I will attend|Not sure yet")
+      ),
+      0
+     )
+    )
+   )
+  ),
+  INDEX(SPLIT(x,"♦"),2)
+ }
+ )
+)
